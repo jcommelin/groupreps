@@ -41,7 +41,10 @@ def WeylLength(ct, m):
 	elif ct == ['G', 2]:
 		return dotproduct(m, [2,4])
 
+# The function CandidateGroups tries to enumerate all simple groups in a clever way and tests if the group is a candidate for the representation.
+# Note: Currently we only consider simple groups. It would be awesome if we can consider all semisimple groups.
 def CandidateGroups(dim, level):
+	# We really need a clever enumeration here.
 	cts = [ ['A',1], ['A',2], ['A',3], ['B',2], ['B',3], ['C',3] ] + [ ['A',l] for l in range(4,20) ] + [ ['B',l] for l in range(4,20) ] + [ ['C',l] for l in range(4,20) ] + [ ['D',l] for l in range(4,5) ] + [ ['E',6], ['E',7], ['E',8], ['F',4], ['G',2] ]
 	for ct in cts:
 		l = ct[1]
